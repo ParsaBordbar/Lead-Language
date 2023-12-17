@@ -16,6 +16,12 @@ class Lexer():
         #Semi-colon
         self.lexer.add('SEMI_COLON', r'\;')
         
+        #Dot
+        self.lexer.add('Dot', r'\.')
+        
+        #Assignment 
+        self.lexer.add('Assignment', r'\=')
+        
         #Math Operators
         self.lexer.add('SUM', r'\+')
         self.lexer.add('SUB', r'\-')
@@ -39,8 +45,18 @@ class Lexer():
         self.lexer.ignore('\t+')
         self.lexer.ignore('\n+')
         
-        #For Comments
-        # self.lexer.startswith('//').ignore()
+        #CurlyBraces
+        self.lexer.add('OPEN_BRACE', r'\{')
+        self.lexer.add('CLOSE_BRACE', r'\}')
+        
+        #If statement(agar in this language)
+        self.lexer.add('If', r'agar')
+        
+        #Identifier => variables 
+        self.lexer.add('IDENTIFIER', r'[a-zA-Z_][a-zA-Z0-9_]*')
+                
+        #For Loops
+        self.lexer.add('for', r'halgheh')
 
     def get_lexer(self):
         self.create_tokens()
