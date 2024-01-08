@@ -17,10 +17,10 @@ class Lexer():
         self.lexer.add('SEMI_COLON', r'\;')
         
         #Dot
-        self.lexer.add('Dot', r'\.')
+        self.lexer.add('DOT', r'\.')
         
         #Assignment 
-        self.lexer.add('Assignment', r'\=')
+        self.lexer.add('ASSIGNMENT', r'\=')
         
         #Math Operators
         self.lexer.add('SUM', r'\+')
@@ -36,7 +36,9 @@ class Lexer():
         self.lexer.add('LOGICAL_LOWER_OR_EQUAL', r'<=')
 
         #Number
-        self.lexer.add('NUMBER', r'\d+') 
+        self.lexer.add('NUMBER', r'\d+')
+        self.lexer.add("INT_VALUE", r"[0-9]+")
+        self.lexer.add("FLOAT_VALUE", r"[0-9]+\.[0-9]+") 
         self.lexer.add('INT', r'sahih') 
         self.lexer.add('FLOAT', r'ashar') 
         
@@ -50,13 +52,13 @@ class Lexer():
         self.lexer.add('CLOSE_BRACE', r'\}')
         
         #If statement(agar in this language)
-        self.lexer.add('If', r'agar')
+        self.lexer.add('IF', r'agar')
         
         #Identifier => variables 
         self.lexer.add('IDENTIFIER', r'[a-zA-Z_][a-zA-Z0-9_]*')
                 
         #For Loops
-        self.lexer.add('for', r'halgheh')
+        self.lexer.add('FOR', r'halgheh')
 
     def get_lexer(self):
         self.create_tokens()

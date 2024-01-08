@@ -1,20 +1,14 @@
 from lexer import Lexer
 from parser import Parser
 
-text_input = """
-
-agar(i = 2){
-    chap(4 / 4 * 2);
-}
-"""
+input_file = open('test.pb', 'r')
+code = input_file.read()
 
 lexer = Lexer().get_lexer()
-tokens = lexer.lex(text_input)
+tokens = lexer.lex(code)
 
+print('Tokens: \n')
 for token in tokens:
-    print(token)
-
-pg = Parser()
-pg.parse()
-parser = pg.get_parser()
-parser.parse(tokens).eval()
+    print(token, '\n')
+    
+input_file.close()
